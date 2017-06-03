@@ -3,14 +3,28 @@ package com.jia.news.dto;
 import java.util.Date;
 
 import org.springframework.data.annotation.Id;
+
 public class News {
 	@Id
 	private String id;
-	
+	//新闻标题 
 	private String title;
-	private String description;
+	//新闻内容 
+	private String content;
+	//新闻作者 
 	private String author;
-	private Date date;
+	//发布日期 
+	private Date publishDate;
+	//最后修改日期
+	private Date lastModifiedDate;
+
+	public Date getLastModifiedDate() {
+		return lastModifiedDate;
+	}
+
+	public void setLastModifiedDate(Date lastModifiedDate) {
+		this.lastModifiedDate = lastModifiedDate;
+	}
 
 	public String getId() {
 		return id;
@@ -28,12 +42,12 @@ public class News {
 		this.title = title;
 	}
 
-	public String getDescription() {
-		return description;
+	public String getContent() {
+		return content;
 	}
 
-	public void setDescription(String description) {
-		this.description = description;
+	public void setContent(String content) {
+		this.content = content;
 	}
 
 	public String getAuthor() {
@@ -44,18 +58,18 @@ public class News {
 		this.author = author;
 	}
 
-	public Date getDate() {
-		return date;
+	public Date getPublishDate() {
+		return publishDate;
 	}
 
-	public void setDate(Date date) {
-		this.date = date;
+	public void setPublishDate(Date publishDate) {
+		this.publishDate = publishDate;
 	}
 
 	@Override
 	public String toString() {
-		return "News [id=" + id + ", title=" + title + ", description=" + description + ", author=" + author + ", date="
-				+ date + "]";
+		return "News [id=" + id + ", title=" + title + ", content=" + content + ", author=" + author + ", publishDate="
+				+ publishDate + "]";
 	}
 
 }
