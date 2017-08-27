@@ -16,10 +16,9 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.jia.news.dto.News;
+import com.jia.news.model.News;
 import com.jia.news.repository.NewsRepository;
 
 @RestController
@@ -52,11 +51,6 @@ public class NewsController {
 		return newsRepository.findOne(newsId);
 	}
 
-	// 按照条件查询
-/*	@RequestMapping(method = RequestMethod.GET,consumes="application/json")
-	public List<News> findByQuery(@RequestParam Query query) {
-		return mongoTemplate.find(query, News.class);
-	}*/
 
 	// 删除新闻
 	@RequestMapping(method = RequestMethod.DELETE)

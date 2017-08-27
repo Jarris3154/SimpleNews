@@ -1,4 +1,4 @@
-package com.jia.news.dto;
+package com.jia.news.model;
 
 import java.util.Date;
 
