@@ -1,4 +1,4 @@
-package com.jia.news.controller;
+package com.jia.apis.controller;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
@@ -7,6 +7,8 @@ import java.net.URL;
 import java.util.Date;
 import java.util.List;
 
+import com.jia.apis.model.News;
+import com.jia.apis.repository.NewsRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.data.mongodb.core.query.Criteria;
@@ -17,9 +19,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
-
-import com.jia.news.model.News;
-import com.jia.news.repository.NewsRepository;
 
 @RestController
 @RequestMapping("/news")
@@ -125,19 +124,4 @@ public class NewsController {
 		}
 	}
 
-	// 通过url访问api获取json字符串
-	private static String getRestResponse(URL newsUrl) throws Exception {
-		StringBuilder result = new StringBuilder();
-		HttpURLConnection conn = (HttpURLConnection) newsUrl.openConnection();
-		conn.setRequestMethod("GET");
-		conn.setConnectTimeout(30000);
-		conn.setReadTimeout(30000);
-		BufferedReader rd = new BufferedReader(new InputStreamReader(conn.getInputStream()));
-		String line;
-		while ((line = rd.readLine()) != null) {
-			result.append(line);
-		}
-		rd.close();
-		return result.toString();
-	}
 }
