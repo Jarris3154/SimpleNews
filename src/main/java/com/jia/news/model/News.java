@@ -1,4 +1,4 @@
-package com.jia.apis.model;
+package com.jia.news.model;
 
 import java.util.Date;
 

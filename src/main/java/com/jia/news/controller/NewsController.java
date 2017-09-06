@@ -1,14 +1,10 @@
-package com.jia.apis.controller;
+package com.jia.news.controller;
 
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
-import java.net.HttpURLConnection;
-import java.net.URL;
 import java.util.Date;
 import java.util.List;
 
-import com.jia.apis.model.News;
-import com.jia.apis.repository.NewsRepository;
+import com.jia.news.model.News;
+import com.jia.news.repository.NewsRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.data.mongodb.core.query.Criteria;
