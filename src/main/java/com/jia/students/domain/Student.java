@@ -1,4 +1,4 @@
-package com.jia.students.model;
+package com.jia.students.domain;
 
 import org.springframework.data.annotation.Id;
 

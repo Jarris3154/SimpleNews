@@ -3,7 +3,7 @@ package com.jia.news.controller;
 import java.util.Date;
 import java.util.List;
 
-import com.jia.news.model.News;
+import com.jia.news.domain.News;
 import com.jia.news.repository.NewsRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.MongoTemplate;
