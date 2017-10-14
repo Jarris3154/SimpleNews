@@ -1,4 +1,4 @@
-# SimpleNews
+# companyMgSys Restful API
 ##This is my first time to submit the codes!
 	Thanks for Emerson and its project TAF, because when I was working there, I learned github and many things.
 	
