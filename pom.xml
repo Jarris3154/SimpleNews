@@ -4,11 +4,11 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.jia</groupId>
-    <artifactId>companyMgSys</artifactId>
+    <artifactId>dvdDemo</artifactId>
     <version>1.0.0-SNAPSHOT</version>
     <packaging>jar</packaging>
 
-    <name>companyMgSys</name>
+    <name>DVD_demo</name>
     <description>module APIs with Spring Boot</description>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
