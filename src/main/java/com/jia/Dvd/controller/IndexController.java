@@ -17,8 +17,13 @@ public class IndexController {
         return "add";
     }
 
-    @RequestMapping("/showDvd")
+    @RequestMapping("/returnDvd")
     public String returnDvd(){
+        return "returnDvd";
+    }
+
+    @RequestMapping("/showDvd")
+    public String showDvd(){
         return "showDvd";
     }
 }

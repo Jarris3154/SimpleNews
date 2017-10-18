@@ -4,26 +4,37 @@
     <meta charset="UTF-8"/>
     <title>Title</title>
     <script src="/js/angular.min.js"></script>
-    <script src="/js/index.js"></script>
+    <script src="/js/app.js"></script>
 </head>
-<body ng-app="myApp">
+<body ng-app="myApp" ng-controller="showDvdController">
 
-<table ng-controller="myController">
-    <tr>
-        <th>序号</th>
-        <th>状态</th>
-        <th>名称</th>
-        <th>借出日期</th>
-        <th>借出次数</th>
-    </tr>
-    <tr ng-repeat="dvd in dvds">
-        <td>{{$index+1}}</td>
-        <td>{{dvd.lendState}}</td>
-        <td>{{dvd.name}}</td>
-        <td>{{dvd.lendOutDate}}</td>
-        <td>{{dvd.lendCount}}</td>
-    </tr>
+<h2>DVD管理系统</h2>
+<div>
+    <label>DVD名称：</label><input type="text" ng-model ="dvd.name" />
+    <button ng-click="addDvd()">增加</button>
+</div>
+<div>DVD列表</div>
+<div>
+    <table>
+        <tr>
+            <th>序号</th>
+            <th>状态</th>
+            <th>名称</th>
+            <th>借出日期</th>
+            <th>借出次数</th>
+        </tr>
 
-</table>
+        <tr ng-repeat="dvd in dvds">
+            <td>{{$index+1}}</td>
+            <td>{{dvd.lendState}}</td>
+            <td>{{dvd.name}}</td>
+            <td>{{dvd.lendOutDate}}</td>
+            <td>{{dvd.lendCount}}</td>
+            <td><button ng-click="del(dvd.id)">删除</button></td>
+            <td></td>
+        </tr>
+
+    </table>
+</div>
 </body>
 </html>

@@ -14,8 +14,8 @@ public class Dvd {
     private Date lendOutDate;
     //借出次数
     private int lendCount;
-    //默认为可借出
-    private LendState lendState = LendState.RETURNED;
+    //默认为可借
+    private LendState lendState = LendState.可借;
 
     public String getId() {
         return id;
