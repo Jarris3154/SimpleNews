@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Title</title>
+    <script src="/js/angular.min.js"></script>
+    <script src="/js/index.js"></script>
+</head>
+<body ng-app="myApp">
+
+<table ng-controller="myController">
+    <tr>
+        <th>序号</th>
+        <th>状态</th>
+        <th>名称</th>
+        <th>借出日期</th>
+        <th>借出次数</th>
+    </tr>
+    <tr ng-repeat="dvd in dvds">
+        <td>{{$index+1}}</td>
+        <td>{{dvd.lendState}}</td>
+        <td>{{dvd.name}}</td>
+        <td>{{dvd.lendOutDate}}</td>
+        <td>{{dvd.lendCount}}</td>
+    </tr>
+
+</table>
+</body>
+</html>
