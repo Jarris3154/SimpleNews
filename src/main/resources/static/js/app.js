@@ -19,12 +19,22 @@ var dvdService = app.service('dvdService', function($http) {
     return $http.post(`${API_SERVICE}`, dvd);
   }
 
+    //借dvd
+  this.lendDvd =function(dvdId){
+    return $http.post(`${API_SERVICE}/${dvdId}/lendDvd`);
+  }
+
+    //归还dvd
+  this.returnDvd =function(dvdId){
+      return $http.post(`${API_SERVICE}/${dvdId}/returnDvd`);
+  }
+
 });
 
 app.controller('showDvdController', function($scope, dvdService){
     var refreshData = function(){
         dvdService.getDvds().then(function(response){
-                $scope.dvds = response.data;
+            $scope.dvds = response.data;
         });
     }
 
@@ -38,6 +48,18 @@ app.controller('showDvdController', function($scope, dvdService){
 
     $scope.addDvd = function(){
         dvdService.addDvd($scope.dvd).then(function(response){
+            refreshData();
+        });
+    };
+
+    $scope.lendDvd =function(dvdId){
+        dvdService.lendDvd(dvdId).then(function(){
+            refreshData();
+        });
+    };
+
+    $scope.returnDvd =function(dvdId){
+        dvdService.returnDvd(dvdId).then(function(){
             refreshData();
         });
     };

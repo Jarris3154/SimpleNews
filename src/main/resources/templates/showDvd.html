@@ -22,14 +22,17 @@
             <th>名称</th>
             <th>借出日期</th>
             <th>借出次数</th>
+            <th colspan="2">操作</th>
         </tr>
 
         <tr ng-repeat="dvd in dvds">
             <td>{{$index+1}}</td>
             <td>{{dvd.lendState}}</td>
             <td>{{dvd.name}}</td>
-            <td>{{dvd.lendOutDate}}</td>
+            <td>{{dvd.lendOutDate|date:'yyyy-MM-dd HH:mm:ss'}}</td>
             <td>{{dvd.lendCount}}</td>
+            <td ng-if="dvd.lendState==='已借出'"><button ng-click="returnDvd(dvd.id)">归还</button></td>
+            <td ng-if="dvd.lendState==='可借'"><button ng-click="lendDvd(dvd.id)">借出</button></td>
             <td><button ng-click="del(dvd.id)">删除</button></td>
             <td></td>
         </tr>
